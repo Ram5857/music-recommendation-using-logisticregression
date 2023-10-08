@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Recommendation</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="center-content">
+        <h1>Music Recommendation</h1>
+        <form method="POST" class="form-container">
+            <label for="mood">Enter your mood:</label>
+            <input type="text" id="mood" name="mood" required>
+            <button type="submit">Get Music Recommendation</button>
+        </form>
+
+        {% if music_recommendation %}
+        <p>Recommended Music:</p>
+        <p class="music-result">{{ music_recommendation }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
